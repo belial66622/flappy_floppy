@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	int score = 0;
+
 	bool gameOver = true;
 
 	public bool GameOver { get { return !gameOver; } }
@@ -65,8 +66,8 @@ public class GameManager : MonoBehaviour {
 
 	void OnPlayerScored(){
 	
-		_score++;
-		scoreText.text = _score;
+		score++;
+		scoreText.text = score;
 	}
 
 	void SetPageState(PageState state){
