@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 	public bool GameOver { get { return gameOver; } }
 
 	void Awake(){
-	
+
 		Instance = this;
 	}
 
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 		CountdownText.OnCountdownFinished += OnCountdownFinished;
 		TapController.OnPlayerDied += OnPlayerDied;
 		TapController.OnPlayerScored += OnPlayerScored;
-	
+
 	}
 
 	void OnDisable(){
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
 	void OnPlayerDied(){
 		gameOver = true;
 		int savedScore = PlayerPrefs.GetInt ("highscore");
-		if (score < savedScore) {
+		if (score > savedScore) {
 			PlayerPrefs.SetInt ("highscore", score);
 		
 		}
